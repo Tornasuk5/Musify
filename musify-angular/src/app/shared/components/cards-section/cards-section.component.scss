@@ -1,0 +1,28 @@
+.cards-section{
+    &-title{
+        margin: 1rem 0;
+    }
+
+    &-list{
+        display: grid;
+
+        ul{
+            display: grid;
+            list-style: none;
+
+            li{
+                display: grid;
+            }
+        }
+    }
+
+    .cards-small{
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 2rem;
+    }
+
+    .cards-big{
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: 2rem;
+    }
+}

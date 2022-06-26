@@ -1,0 +1,62 @@
+@import "utils/variables";
+
+.sidebar-container{
+    position: fixed;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+
+    &-menu{
+        margin-bottom: .5rem;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    &-nav, &-lists{
+        padding-right: 1rem;
+
+        cursor: pointer;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                font-size: .9rem;
+                
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    &:hover{
+                        color: $color-1;
+                    }
+                }
+            }
+
+            li + li{
+                padding-top: .5rem;
+            }
+        }
+
+        ul + ul{
+            margin-top: 2rem;
+        }
+    }
+
+    &-nav{
+        i {
+            margin-right: .5rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    hr{
+        margin: 1rem 0;
+        color: $color-5;
+    }
+
+}

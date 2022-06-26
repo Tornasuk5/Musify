@@ -1,0 +1,25 @@
+<section class="playlist-body">
+    <div class="playlist-body-table">
+        <ul class="playlist-body-table-header">
+            <li>#</li>
+            <li (click)="changeSort('name')">Título</li>
+            <li (click)="changeSort('album')">Album</li>
+            <li>Fecha Incorporación</li>
+            <li><i class="bi bi-clock"></i></li>
+        </ul>
+        <ul class="playlist-body-table-tracks" *ngFor="let track of trackList | orderList: sortOption.prop : sortOption.order; let i = index">
+            <li class="track-id">{{i+1}}</li>
+            <li class="track-title">
+                <img appImgBroken [src]="track.cover">
+                <div>
+                    <p class="track-title-song">{{track.name}}</p>
+                    <p class="track-title-artist">{{track.artist?.name}}</p>
+                </div>
+            </li>
+            <li class="track-album">{{track.album}}</li>
+            <li class="track-date">Hace 1 hora</li>
+            <li class="track-duration">{{track.duration}}</li>
+        </ul>
+    </div>
+</section>
+

@@ -1,0 +1,28 @@
+<div *ngIf="mode == 'small'" class = "card-player player-small">
+    <img appImgBroken [src]="track.cover" [alt]="track.name" class="card-player-cover">
+    <div class="card-player-text">
+        <p>{{track.name}}</p>
+    </div>
+    <button (click)="playTrack(track)" *ngIf="true" class="btn-play">
+        <i class="bi bi-play-fill"></i>
+    </button>
+    <button *ngIf="false" class="btn-pause">
+        <i class="bi bi-pause-fill"></i>
+    </button>
+</div>
+
+<div *ngIf="mode == 'big'" class = "card-player player-big">
+    <div class="player-big-container">
+        <img appImgBroken [src]="track.cover" [alt]="track.name" class="card-player-cover">
+        <button (click)="playTrack(track)" *ngIf="true" class="card-player-button btn-play">
+            <i class="bi bi-play-fill"></i>
+        </button>
+        <button *ngIf="false" class="card-player-button btn-pause">
+            <i class="bi bi-pause-fill"></i>
+        </button>
+    </div>
+    <div class="card-player-text">
+        <p class="card-player-text-title">{{track.name}}</p>
+        <p class="card-player-text-subtitle">{{track.artist?.name}}</p>
+    </div>
+</div>

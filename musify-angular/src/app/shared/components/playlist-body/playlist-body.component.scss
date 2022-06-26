@@ -1,0 +1,60 @@
+@import "utils/variables";
+
+.playlist-body{
+    padding-top: 2rem;
+
+    &-table{
+        display: grid;
+        row-gap: 1rem;
+
+        &-header, &-tracks{
+            display: grid;
+            grid-template-columns: 2.5% 45% 30% 20% 2.5%;
+            list-style: none;
+        }
+
+        &-header{
+            padding-bottom: 1rem;
+            border-bottom: solid 2px $color-5;
+            color: $color-6;
+
+            li{
+                cursor: default;
+            }
+        }
+
+        &-tracks{
+
+            li{
+                display: flex;
+                align-items: center;
+            }
+
+            .track-title{
+                display: flex;
+                align-items: center;
+
+                img{
+                    max-width: 3rem;
+                }
+
+                & > div{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 1rem;
+
+                    .track-title-song{
+                        font-weight: bold;
+                    }
+
+                    .track-title-artist{
+                        font-size: $font-size-small;
+                        color: $color-6;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

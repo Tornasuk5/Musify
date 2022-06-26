@@ -1,0 +1,33 @@
+<div class="sidebar-container">
+    <div class="sidebar-container-menu">
+        <i class="bi bi-three-dots"></i>
+    </div>
+    <div class="sidebar-container-nav">
+        <ul>
+            <li [routerLink]="link.router" *ngFor="let link of menuLinks.defaultOptions">
+                <div>
+                    <i [ngClass]="['bi', link.icon]"></i>
+                    <p>{{link.name}}</p>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li *ngFor="let link of menuLinks.accessLink">
+                <div>
+                    <i [ngClass]="['bi', link.icon]"></i>
+                    <p>{{link.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="sidebar-container-lists">
+        <ul>
+            <li *ngFor="let link of menuLinks.customOptions">
+                <div>
+                    <p>{{link.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

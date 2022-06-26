@@ -1,0 +1,51 @@
+<div class="media-player-container">
+    <ng-container *ngTemplateOutlet="artistZone"></ng-container>
+    <ng-container *ngTemplateOutlet="playerZone"></ng-container>
+    <ng-container *ngTemplateOutlet="settingsZone"></ng-container>
+</div>
+
+<!-- NG Templates-->
+<ng-template #artistZone>
+    <div class="artist-zone-container" *ngIf="multimediaService.trackInfo$ | async as playingTrack">
+        <img appImgBroken class="artist-zone-img" src={{playingTrack.cover}}>
+        <div class="artist-zone-info">
+            <p class="artist-zone-info-song">{{playingTrack.name}}</p>
+            <p class="artist-zone-info-artist">{{playingTrack.artist?.name}}</p>
+        </div>
+        <div class="artist-zone-like">
+            <i class="bi bi-heart"></i>
+            <!-- <i class="bi bi-heart-fill"></i> -->
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #playerZone>
+    <div class="player-zone-container">
+        <div class="player-zone-buttons">
+            <i class="bi bi-skip-start-fill"></i>
+            <button class="btn-play" (click)="multimediaService.tooglePlayer();" ><i [ngClass]="{'bi bi-play-circle': state == 'paused', 
+                                                                                                 'bi bi-pause-circle': state != 'paused'}" 
+            class="bi bi-play-circle"></i></button>
+
+            <i class="bi bi-skip-end-fill"></i>
+            <!-- <i class="bi bi-stop-circle"></i> -->
+        </div>
+        <div class="player-zone-bar">
+            <div class="player-zone-bar-start">
+                <p>{{multimediaService.timeElapsed$ | async}}</p>
+            </div>
+            <div class="player-zone-bar-progress"><div class="player-zone-bar-progress-fill" [style.width]="(multimediaService.playerPercent$ | async)+'%'"></div></div>
+            <div class="player-zone-bar-end" *ngIf="multimediaService.trackInfo$ | async as playingTrack">
+                <p>{{playingTrack.duration}}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #settingsZone>
+    <div class="settings-zone-container">
+        <i class="bi bi-list-ul"></i>
+        <i class="bi bi-speaker"></i>
+        <i class="bi bi-volume-down"></i>
+    </div>
+</ng-template>

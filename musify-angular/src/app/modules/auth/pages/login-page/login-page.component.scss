@@ -1,0 +1,125 @@
+@import "utils/variables";
+
+.login-page{
+    display: grid;
+    height: 95vh;
+    align-items: center;
+    justify-content: center;
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+
+        h3{
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        &-login-buttons{
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2rem;
+            border-bottom: solid 2px $color-1;
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 25rem;
+                padding: .35rem;
+                cursor: pointer;
+                font-weight: bold;
+
+                &:hover{
+                   transform: scale(1.03);
+                   background-color: none !important;
+                }
+
+                i{
+                    font-size: 1.2rem;
+                    margin-right: .3rem;
+                }
+            }
+
+            button + button{
+                margin-top: .75rem;
+            }
+
+            .button-facebook{
+                color: white;
+                background-color: #3b5998;
+            }
+
+            .button-apple{
+                
+            }
+
+            .button-google{
+                color: white;
+                background-color: #DB4437;
+            }
+
+        }
+
+        &-form{
+            display: flex;
+            flex-direction: column;
+            padding-top: 1.8rem;
+
+            div + div{
+                padding-top: .75rem;
+            }
+
+            .form-inputs{
+                display: flex;
+                flex-direction: column;
+
+                input{
+                    margin-top: .25rem;
+                    padding: .5rem;
+                    background-color: $color-4;
+                    border: none;
+                }
+            }
+
+            input.ng-invalid.ng-touched{
+                outline: solid 2px red;
+                border-radius: 3px;
+
+                &:focus{
+                    outline: auto;
+                }
+            }
+
+            a {
+                color: $color-4;
+                margin-top: .2rem;
+                margin-bottom: .75rem;
+            }
+
+            .form-button{
+                background-color: $color-1;
+                color: $color-4;
+                padding: .7rem;
+                margin-top: .75rem;
+                font-weight: bold;
+
+                &:hover:not([disabled]){
+                    background-color: $color-5;
+                    cursor: pointer;
+                }
+
+                &:disabled{
+                    opacity: .4;
+                }
+            }
+
+            .login-error{
+                margin-top: 1rem;
+                color: red;
+            }
+        }
+    }
+}

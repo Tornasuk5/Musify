@@ -1,0 +1,20 @@
+.playlist-header{
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+
+    &-img{
+        max-width: 15rem;
+    }
+
+    &-text{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        row-gap: .15rem;
+
+        h1{
+            font-size: 4rem;
+        }
+    }
+}
